@@ -16,12 +16,11 @@ function Register() {
     return (
         <>
             <Container>
-                <Grid container spacing={2} style={{ backgroundColor: '#bfbfbf', backgroundSize: 'cover', padding: 100, alignItems: 'center', justifyContent: 'center' }}>>
-
+                <Grid container spacing={2} style={{ alignItems: 'center', justifyContent: 'center' }}>
                     <Grid item md={4}></Grid>
                     <Grid item md={4}>
                         <h1>Fill in Information</h1>
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={{ paddingBottom: 3 }}>
                             <TextField fullWidth label="Email" variant="outlined" onChange={(event) => {
                                 setAccount({
                                     ...account,
@@ -29,7 +28,7 @@ function Register() {
                                 })
                             }} />
                         </div>
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={{ paddingBottom: 3 }}>
                             <TextField fullWidth label="Username" variant="outlined" onChange={(event) => {
                                 setAccount({
                                     ...account,
@@ -37,7 +36,7 @@ function Register() {
                                 })
                             }} />
                         </div>
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={{ paddingBottom: 3 }}>
                             <TextField fullWidth label="Password" variant="outlined" type="password" onChange={(event) => {
                                 setAccount({
                                     ...account,
@@ -45,7 +44,7 @@ function Register() {
                                 })
                             }} />
                         </div>
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={{ paddingBottom: 3 }}>
                             <TextField fullWidth label="Confirm" variant="outlined" type="password" onChange={(event) => {
                                 setAccount({
                                     ...account,
@@ -53,7 +52,7 @@ function Register() {
                                 })
                             }} />
                         </div>
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={{ paddingBottom: 3 }}>
                             <TextField fullWidth label="FirstName" variant="outlined" onChange={(event) => {
                                 setAccount({
                                     ...account,
@@ -61,7 +60,7 @@ function Register() {
                                 })
                             }} />
                         </div>
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={{ paddingBottom: 3 }}>
                             <TextField fullWidth label="LastName" variant="outlined" onChange={(event) => {
                                 setAccount({
                                     ...account,
@@ -70,7 +69,7 @@ function Register() {
                             }} />
                         </div>
 
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={{ paddingBottom: 3 }}>
                             <TextField fullWidth label="BirthDate" variant="outlined" onChange={(event) => {
                                 setAccount({
                                     ...account,
@@ -78,7 +77,7 @@ function Register() {
                                 })
                             }} />
                         </div>
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={{ paddingBottom: 3 }}>
                             <TextField fullWidth label="Gender" variant="outlined" onChange={(event) => {
                                 setAccount({
                                     ...account,
@@ -93,6 +92,11 @@ function Register() {
                                 }
                             })
                         }}>Register</Button>
+                        <Button variant="contained" style={{ backgroundColor: '#42B72A' }} size="" onClick={() => {
+                            ("/registration")
+                        }}>
+                            back
+                        </Button>
                     </Grid>
                     <Grid item md={4}></Grid>
                 </Grid>

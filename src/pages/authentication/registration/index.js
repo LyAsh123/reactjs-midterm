@@ -13,7 +13,10 @@ function Register() {
     return (
         <>
             <Container>
-                <Grid container spacing={2} style={{ backgroundColor: '#bfbfbf', backgroundSize: 'cover', height: '103vh', padding: 100, alignItems: 'center', justifyContent: 'center' }}>
+                <Grid container spacing={2} style={{
+                    backgroundImage: 'pink', height: '102.5vh', width: '195.10vh',
+                    padding: 100, alignItems: 'center', justifyContent: 'center'
+                }}>
                     <Grid item xs={6} md={6}>
                         <Card>
                             <CardContent>
@@ -31,16 +34,14 @@ function Register() {
                                         })
                                     }} />
                                     <Button variant="contained" style={{ backgroundColor: '#1877F2' }} size="large" onClick={() => {
-                                        axios.post('accounts/token/login/', login).then(response => {
-                                            localStorage.setItem('token', response.data.auth_token);
-                                            navigate("/application")
-                                        })
+                                        navigate("/application")
+
                                     }}>Login</Button>
                                     <br style={{ marginTop: 15 }} />
-                                    <Button variant="contained" style={{ backgroundColor: '#42B72A' }} size="large" onClick={() => {
+                                    <Button variant="contained" style={{ backgroundColor: '#42B72A' }} size="" onClick={() => {
                                         navigate("/registration")
                                     }}>
-                                        Create Account
+                                        Do you have an accounts? Sign up here
                                     </Button>
                                 </FormControl>
 
