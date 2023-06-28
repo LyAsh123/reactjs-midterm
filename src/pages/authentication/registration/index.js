@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, FormControl, Grid, TextField } from "@mui/material";
+import { Button, Card, CardContent, FormControl, Grid, TextField, TouchableOpacity } from "@mui/material";
 import { Container } from "@mui/system";
 import { useState } from "react";
 import axios from "../../../plugins/axios";
@@ -14,14 +14,15 @@ function Register() {
         <>
             <Container>
                 <Grid container spacing={2} style={{
-                    backgroundImage: 'pink', height: '102.5vh', width: '195.10vh',
-                    padding: 100, alignItems: 'center', justifyContent: 'center'
+                background: 'linear-gradient(to right, #FBD3E9, #BB377D)',
+                height: '102.5vh', width: '195.10vh',
+                    padding: 100, alignItems: 'center', justifyContent: 'center', 
                 }}>
                     <Grid item xs={6} md={6}>
                         <Card>
                             <CardContent>
                                 <FormControl fullWidth>
-                                    <TextField variant="outlined" placeholder="Email" label="Email" value={login.email} onChange={(event) => {
+                                    <TextField variant="outlined" placeholder="Email"  label="Email" value={login.email} onChange={(event) => {
                                         setLogin({
                                             ...login,
                                             email: event.target.value
@@ -33,12 +34,14 @@ function Register() {
                                             password: event.target.value
                                         })
                                     }} />
-                                    <Button variant="contained" style={{ backgroundColor: '#1877F2' }} size="large" onClick={() => {
-                                        navigate("/application")
-
+                                    <Button variant="contained" style={{ backgroundColor: '#7A5C58' }} size="large" onClick={() => {
+                                        axios.post('accounts/token/login', login).then(response => {
+                                            localStorage.setItem('token', response.data.auth_token);
+                                            navigate("/application")
+                                        })
                                     }}>Login</Button>
                                     <br style={{ marginTop: 15 }} />
-                                    <Button variant="contained" style={{ backgroundColor: '#42B72A' }} size="" onClick={() => {
+                                    <Button variant="contained" style={{ backgroundColor: '#7A5C58' }} size="" onClick={() => {
                                         navigate("/registration")
                                     }}>
                                         Do you have an accounts? Sign up here

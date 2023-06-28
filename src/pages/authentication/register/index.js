@@ -1,6 +1,8 @@
 import { Button, Container, Grid, TextField } from "@mui/material"
 import { useState } from "react"
 import axios from '../../../plugins/axios';
+import { useNavigate } from "react-router-dom";
+
 
 function Register() {
     const [account, setAccount] = useState({
@@ -13,6 +15,7 @@ function Register() {
         "birthdate": null,
         "gender": ""
     })
+    const navigate = useNavigate();
     return (
         <>
             <Container>
@@ -93,7 +96,7 @@ function Register() {
                             })
                         }}>Register</Button>
                         <Button variant="contained" style={{ backgroundColor: '#42B72A' }} size="" onClick={() => {
-                            ("/registration")
+                            navigate("/")
                         }}>
                             back
                         </Button>
